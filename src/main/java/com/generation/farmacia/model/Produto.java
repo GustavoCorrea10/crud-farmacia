@@ -29,7 +29,11 @@ public class Produto {
 	private BigDecimal preco;
 
 	@NotNull(message = "O atributo preço é obrigatório!")
-	private Integer ml;
+	private String quantidade;
+
+	@NotBlank(message = "O atributo unidadeMedida é obrigatório!")
+	@Size(min = 3, max = 200, message = "digite no minimo 3 letras e no maximo 200")
+	private String unidadeMedida;
 
 	@NotBlank(message = "O atributo indicação é obrigatório!")
 	@Size(min = 3, max = 200, message = "digite no minimo 3 letras e no maximo 200")
@@ -63,14 +67,6 @@ public class Produto {
 		this.preco = preco;
 	}
 
-	public Integer getMl() {
-		return ml;
-	}
-
-	public void setMl(Integer ml) {
-		this.ml = ml;
-	}
-
 	public String getIndicacao() {
 		return indicacao;
 	}
@@ -85,6 +81,22 @@ public class Produto {
 
 	public void setCategoria(Categoria categoria) {
 		this.categoria = categoria;
+	}
+
+	public String getQuantidade() {
+		return quantidade;
+	}
+
+	public void setQuantidade(String quantidade) {
+		this.quantidade = quantidade;
+	}
+
+	public String getUnidadeMedida() {
+		return unidadeMedida;
+	}
+
+	public void setUnidadeMedida(String unidadeMedida) {
+		this.unidadeMedida = unidadeMedida;
 	}
 
 }
